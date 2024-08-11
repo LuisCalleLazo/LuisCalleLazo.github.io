@@ -1,0 +1,40 @@
+
+body
+{
+  padding: 0px;
+  margin: 0px;
+}
+
+@layer
+base
+{
+  :root
+  {
+    --bg-color: #000;
+    --bg-color2: #440000;
+    --bg-color3: #17788F;
+    --bg-color4: linear-gradient(to bottom right, #000, 70%, #17788F67);
+    --bg-color5: linear-gradient(180deg, #000, 70%, #ee2323);
+  }
+}
+
+.container
+{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 270px 1fr;
+  height: 100vh;
+  grid-template-areas: "navigator main";
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.navigator-desktop
+{
+  grid-area: navigator;
+}
+
+.main-container
+{
+  grid-area: main;
+}

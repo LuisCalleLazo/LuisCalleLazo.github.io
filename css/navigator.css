@@ -1,0 +1,61 @@
+
+.navigator-desktop
+{
+  background: var(--bg-color5);
+  border-radius: 0px 15px 15px 0px;
+}
+
+.nav-photo
+{
+  /* background: #f00; */
+  display: flex;
+  justify-content: center;
+}
+
+.nav-photo img
+{
+  margin: 5px;
+  border-radius: 100%;
+}
+
+.nav-item-container
+{
+  display: flex;
+  flex-direction: column;
+  /* background-color: #050; */
+}
+
+.nav-item
+{
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px 10px 20px 30px;
+  /* background-color: #400; */
+  display: flex;
+}
+
+.nav-item:hover,
+.nav-item button:hover
+{
+  cursor: pointer;
+}
+
+.nav-item:hover
+{
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-item-container button
+{
+  margin-left: 20px;
+  color: white;
+  font-size: 18px;
+  height: 30px;
+  text-align: left;
+  width: 100%;
+  border: 0px;
+  background-color: #0000;
+  font-family: monospace;
+}
