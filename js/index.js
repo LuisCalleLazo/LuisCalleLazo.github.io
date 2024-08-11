@@ -4,6 +4,7 @@ function loadComponent(componentPath, elementId) {
     .then(response => response.text())
     .then(data => {
       document.getElementById(elementId).innerHTML = data;
+      nav_items.map((item) => { addNavItem(item.icon, item.text, item.html); });
     });
 }
 
