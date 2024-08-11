@@ -8,15 +8,31 @@ let nav_items = [
     {icon: 'bi bi-file-earmark-text-fill', text: 'Educacion', html: 'views/education.html'},
 ]
 
+let cont = 1;
+
 function addNavItem(icon, text, html)
 {
   document.getElementById("nav-item-container").innerHTML +=
   `
-    <div class="nav-item" onclick="loadPage('${html}')">
+    <div class="nav-item${cont == 1 ? ' active' : ''}" onclick="loadPage('${html}', ${cont})">
       <i class="${icon}"></i>
       <button name="button">
         ${text}
       </button>
     </div>
   `;
+  cont++;
+}
+
+function changeNavItemSelect(selectNumber)
+{
+  document.querySelectorAll(".nav-item").forEach((item, i) => {
+    item.classList.remove('active');
+  });
+
+
+  document.querySelectorAll(".nav-item").forEach((item, i) => {
+    if ((i + 1) == selectNumber) item.classList.add('active');
+  });
+
 }

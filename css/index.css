@@ -23,11 +23,12 @@ base
 {
   :root
   {
+    --color-primary: #ca0046;
     --bg-color: #000;
     --bg-color2: #440000;
     --bg-color3: #17788F;
     --bg-color4: linear-gradient(to bottom right, #000, 70%, #17788F67);
-    --bg-color5: linear-gradient(290deg, #000, 80%, #ee2323);
+    --bg-color5: linear-gradient(290deg, #000, 80%, #cf0045);
   }
 }
 

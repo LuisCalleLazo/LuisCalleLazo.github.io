@@ -57,7 +57,7 @@
 {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
-  background-color: #f00;
+  background-color: var(--color-primary);
 
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;

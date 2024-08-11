@@ -11,13 +11,14 @@ function loadComponent(componentPath, elementId) {
 // Cargar componentes
 loadComponent('components/navigator.html', 'navigator');
 
-function loadPage(page) {
+function loadPage(page, selectNumber) {
   fetch(page)
     .then(response => response.text())
     .then(data => {
       document.getElementById('content').innerHTML = data;
+      changeNavItemSelect(selectNumber)
     });
 }
 
 // Cargar página inicial
-loadPage('views/home.html');
+loadPage('views/home.html', 1);
