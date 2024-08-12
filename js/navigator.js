@@ -26,13 +26,18 @@ function addNavItem(icon, text, html)
 
 function changeNavItemSelect(selectNumber)
 {
+  localStorage.setItem("navItem", selectNumber);
+  
   document.querySelectorAll(".nav-item").forEach((item, i) => {
     item.classList.remove('active');
   });
 
 
   document.querySelectorAll(".nav-item").forEach((item, i) => {
-    if ((i + 1) == selectNumber) item.classList.add('active');
+    if ((i + 1) == selectNumber)
+    {
+      item.classList.add('active');
+    }
   });
 
 }

@@ -21,4 +21,25 @@ function loadPage(page, selectNumber) {
 }
 
 // Cargar página inicial
-loadPage('views/home.html', 1);
+let selectInit = localStorage.getItem("navItem");
+let selectNavItem = (selectInit == undefined || selectInit == null) ? 1 : selectInit;
+
+switch (selectNavItem) {
+  case "1":
+    loadPage('views/home.html', selectNavItem);
+    break;
+  case "2":
+    loadPage('views/about.html', selectNavItem);
+    break;
+  case "3":
+    loadPage('views/projects.html', selectNavItem);
+    break;
+  case "4":
+    loadPage('views/tecnologies.html', selectNavItem);
+    break;
+  case "5":
+    loadPage('views/education.html', selectNavItem);
+    break;
+  default:
+    loadPage('views/home.html', selectNavItem);
+}

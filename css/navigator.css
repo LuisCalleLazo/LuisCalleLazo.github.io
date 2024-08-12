@@ -59,11 +59,11 @@
   transition: all 0.3s ease-in-out;
   background-color: var(--color-primary);
 
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 30px;
 
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   /* border-radius: 30px 10px 10px 30px; */
 }
 
