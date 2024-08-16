@@ -1,8 +1,81 @@
 
 .navigator-desktop
 {
+  position: relative;
+  overflow: hidden;
   background: var(--bg-color5);
   border-radius: 0px 15px 15px 0px;
+}
+.cyber-content
+{
+  right: 0px;
+  bottom: 200px;
+  width: 200px;
+  height: 40vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cyber-line
+{
+  position: absolute;
+  width: 50px;
+  height: 7px;
+  background-color: #9065fc;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+  animation: flash 5s ease-out infinite;
+  transform: rotate(310deg);
+}
+
+@keyframes flash {
+    0%, 100% {
+        box-shadow: 0 0 20px #ff004600;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff0046ff;
+    }
+}
+
+
+.cyber-line:nth-child(odd) {
+  background-color: var(--bg-color2);
+}
+
+.cyber-line:nth-child(even) {
+  background-color: var(--bg-color3);
+}
+
+.cyber-line:nth-child(1)
+{
+  bottom: 110px;
+  right: 125px;
+}
+
+.cyber-line:nth-child(2)
+{
+  top: 240px;
+  right: 100px;
+}
+
+.cyber-line:nth-child(3)
+{
+  top: 190px;
+  right: 20px;
+}
+
+.cyber-line:nth-child(4)
+{
+  bottom: 140px;
+  right: 60px;
+}
+
+.cyber-line:nth-child(5)
+{
+  bottom: 170px;
+  right: 0px;
 }
 
 .nav-photo
@@ -57,7 +130,7 @@
 {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-tras);
 
   border-top-left-radius: 0px;
   border-bottom-left-radius: 30px;
@@ -85,6 +158,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  /* background-color: #400; */
 }
 
 .link-item

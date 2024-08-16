@@ -1,6 +1,5 @@
 
 let nav_items = [
-    {icon: 'bi bi-house-door-fill', text: 'Home', html: 'views/home.html'},
     {icon: 'bi bi-file-person-fill', text: 'Sobre mi', html: 'views/about.html'},
 
     {icon: 'bi bi-server', text: 'Proyectos', html: 'views/projects.html'},
@@ -27,7 +26,7 @@ function addNavItem(icon, text, html)
 function changeNavItemSelect(selectNumber)
 {
   localStorage.setItem("navItem", selectNumber);
-  
+
   document.querySelectorAll(".nav-item").forEach((item, i) => {
     item.classList.remove('active');
   });

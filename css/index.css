@@ -6,9 +6,10 @@ base
   :root
   {
     --color-primary: #ca0046;
+    --color-primary-tras: #ca0046aa;
     --bg-color: #000;
-    --bg-color2: #440000;
-    --bg-color3: #17788F;
+    --bg-color2: #ca004600;
+    --bg-color3: #ca004600;
     --bg-color4: linear-gradient(170deg, #ca0046, 85%, #000);
     --bg-color5: linear-gradient(290deg, #000, 80%, #cf0045);
   }
