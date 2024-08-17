@@ -12,12 +12,25 @@ function loadComponent(componentPath, elementId) {
 loadComponent('components/navigator.html', 'navigator');
 
 function loadPage(page, selectNumber) {
-  fetch(page)
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('content').innerHTML = data;
-      changeNavItemSelect(selectNumber)
-    });
+
+  const contentElement = document.getElementById('content');
+  contentElement.classList.add('slide-out');
+
+  setTimeout(() => {
+    fetch(page)
+      .then(response => response.text())
+      .then(data => {
+        contentElement.innerHTML = data;
+        contentElement.classList.remove('slide-out');
+        contentElement.classList.add('slide-in');
+
+        // Espera a que la animación de entrada termine
+        setTimeout(() => {
+          contentElement.classList.remove('slide-in');
+        }, 500);
+      });
+    changeNavItemSelect(selectNumber);
+  }, 500);
 }
 
 // Cargar página inicial

@@ -8,7 +8,7 @@
 }
 .cyber-content
 {
-  right: 0px;
+  right: -30px;
   bottom: 200px;
   width: 200px;
   height: 40vh;
@@ -21,12 +21,12 @@
 .cyber-line
 {
   position: absolute;
-  width: 50px;
-  height: 7px;
+  width: 80px;
+  height: 2px;
   background-color: #9065fc;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0);
-  animation: flash 5s ease-out infinite;
+  animation: flash 2s ease-out infinite;
   transform: rotate(310deg);
 }
 
@@ -50,8 +50,8 @@
 
 .cyber-line:nth-child(1)
 {
-  bottom: 110px;
-  right: 125px;
+  bottom: 90px;
+  right: 130px;
 }
 
 .cyber-line:nth-child(2)
@@ -62,8 +62,8 @@
 
 .cyber-line:nth-child(3)
 {
-  top: 190px;
-  right: 20px;
+  bottom: -70px;
+  right: 50px;
 }
 
 .cyber-line:nth-child(4)
@@ -75,6 +75,36 @@
 .cyber-line:nth-child(5)
 {
   bottom: 170px;
+  right: 0px;
+}
+
+.cyber-line:nth-child(6)
+{
+  bottom: 10px;
+  right: 50px;
+}
+
+.cyber-line:nth-child(7)
+{
+  bottom: 10px;
+  right: 180px;
+}
+
+.cyber-line:nth-child(8)
+{
+  top: 190px;
+  right: 20px;
+}
+
+.cyber-line:nth-child(9)
+{
+  bottom: -30px;
+  right:120px;
+}
+
+.cyber-line:nth-child(10)
+{
+  bottom: 0px;
   right: 0px;
 }
 
