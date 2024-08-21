@@ -10,7 +10,7 @@ base
     --bg-color: #000;
     --bg-color2: #ca004633;
     --bg-color3: #ca004644;
-    --bg-color4: linear-gradient(170deg, #ca0046, 85%, #000);
+    --bg-color4: linear-gradient(170deg, #ca0046, 95%, #000);
     --bg-color5: linear-gradient(290deg, #000, 80%, #cf0045);
   }
 }
@@ -57,7 +57,7 @@ body
   color: white;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 20px 40px 20px 40px;
+  padding: 20px 10px 20px 10px;
   z-index: 50;
 }
 
