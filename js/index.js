@@ -1,78 +1,30 @@
+function loadPage(url, pageNumber) {
+  const content = document.getElementById("content")
 
-function loadComponent(componentPath, elementId) {
-  fetch(componentPath)
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById(elementId).innerHTML += data;
-      nav_items.map((item) => { addNavItem(item.icon, item.text, item.html); });
-    });
-}
-
-// Cargar componentes
-loadComponent('components/navigator.html', 'navigator');
-
-function loadPage(page, selectNumber) {
-
-  const contentElement = document.getElementById('content');
-  contentElement.classList.add('slide-out');
+  // Animación de salida
+  content.classList.add("slide-out")
 
   setTimeout(() => {
-    fetch(page)
-      .then(response => response.text())
-      .then(data => {
-        contentElement.innerHTML = data;
-        contentElement.classList.remove('slide-out');
-        contentElement.classList.add('slide-in');
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        content.innerHTML = html
+        content.classList.remove("slide-out")
+        content.classList.add("slide-in")
 
-        // Espera a que la animación de entrada termine
+        // Cambiar item activo en navegación
+        window.changeNavItemSelect(pageNumber) // Assuming changeNavItemSelect is a global function
+
+        // Remover clase de animación después de completar
         setTimeout(() => {
-          contentElement.classList.remove('slide-in');
-        }, 500);
-      });
-    changeNavItemSelect(selectNumber);
-  }, 500);
+          content.classList.remove("slide-in")
+        }, 600)
+      })
+      .catch((error) => {
+        console.error("Error loading page:", error)
+        content.innerHTML =
+          '<div class="section-content"><h2>Error al cargar la página</h2><p>Por favor, intenta nuevamente.</p></div>'
+        content.classList.remove("slide-out")
+      })
+  }, 400)
 }
-
-// Cargar página inicial
-let selectInit = localStorage.getItem("navItem");
-let selectNavItem = (selectInit == undefined || selectInit == null) ? 1 : selectInit;
-
-switch (selectNavItem) {
-  case "1":
-    loadPage('views/about.html', selectNavItem);
-    break;
-  case "2":
-    loadPage('views/projects.html', selectNavItem);
-    break;
-  case "3":
-    loadPage('views/tecnologies.html', selectNavItem);
-    break;
-  case "4":
-    loadPage('views/education.html', selectNavItem);
-    break;
-  default:
-    loadPage('views/home.html', selectNavItem);
-}
-
-
-let socket = new WebSocket("ws://localhost:5132/socket/notification/status-user");
-
-socket.onopen = function(e) {
-  console.log("[open] Connection established");
-};
-
-socket.onmessage = function(event) {
-  console.log(`[message] Data received from server: ${event.data}`);
-};
-
-socket.onclose = function(event) {
-  if (event.wasClean) {
-    console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
-  } else {
-    console.log('[close] Connection died');
-  }
-};
-
-socket.onerror = function(error) {
-  console.log(`[error] ${error.message}`);
-};
