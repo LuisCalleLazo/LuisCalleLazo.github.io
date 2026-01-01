@@ -1,228 +1,475 @@
-
 /* Estilos generales de contenido */
 h1,
 h2,
 h3,
 h4 {
-  color: var(--text-primary);
-  margin-bottom: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-accent) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--color-primary-light);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-primary-light);
 }
 
 h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
 /* Efecto typewriter */
 .typewriter h1 {
-  overflow: hidden;
-  border-right: 3px solid var(--color-accent);
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.1em;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-  display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid var(--color-accent);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+    display: inline-block;
 }
 
 .typewriter h2 {
-  margin-top: 1rem;
-  opacity: 0;
-  animation: fadeIn 1s ease-in 3.5s forwards;
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in 3.5s forwards;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--color-accent);
-  }
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-accent);
+    }
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Secciones de contenido */
 .section-content {
-  background: var(--bg-card);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .section-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary),
+        var(--color-accent)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
 }
 
 .section-content:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
 }
 
 .section-content:hover::before {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 .section-title {
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .section-title h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
 }
 
 .section-title h2::before {
-  content: "";
-  width: 4px;
-  height: 24px;
-  background: var(--color-primary);
-  border-radius: 2px;
+    content: "";
+    width: 4px;
+    height: 24px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    flex-shrink: 0;
 }
 
 /* Grid de items */
 .section-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.section-items > div {
+    display: flex;
+    flex-direction: column;
 }
 
 .section-items img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid var(--border-color);
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .section-items img:hover {
-  transform: scale(1.05);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-glow);
+    transform: scale(1.05);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-glow);
 }
 
 /* Lista de tecnologías */
 .tecnologies-container h3,
 .projects-container h3 {
-  padding: 0.75rem 1.25rem;
-  margin: 0.5rem 0;
-  background: var(--bg-darker);
-  border-left: 4px solid var(--color-primary);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0;
+    background: var(--bg-darker);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .tecnologies-container h3:hover,
 .projects-container h3:hover {
-  background: var(--bg-card-hover);
-  transform: translateX(8px);
-  border-left-color: var(--color-accent);
+    background: var(--bg-card-hover);
+    transform: translateX(8px);
+    border-left-color: var(--color-accent);
 }
 
 /* Imágenes de proyectos */
 .project-image {
-  width: 100%;
-  max-width: 600px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 1rem 0;
-  border: 2px solid var(--border-color);
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 1rem 0;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
 }
 
 .project-image:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
 }
 
 /* Badges/Tags */
 .tag {
-  display: inline-block;
-  padding: 0.375rem 0.875rem;
-  background: var(--color-primary);
-  color: var(--text-primary);
-  border-radius: 20px;
-  font-size: 0.875rem;
-  margin: 0.25rem;
-  transition: all 0.3s ease;
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    background: var(--color-primary);
+    color: var(--text-primary);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    margin: 0.25rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .tag:hover {
-  background: var(--color-primary-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
-/* Responsive */
+/* Contenedores específicos */
+.about-container,
+.projects-container,
+.tecnologies-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.625rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+
+    .section-content {
+        padding: 1.75rem;
+    }
+
+    .section-items {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .project-image {
+        height: 250px;
+    }
+}
+
+/* Mobile landscape y tablets pequeñas (481px - 768px) */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.125rem;
-  }
+    h1 {
+        font-size: 1.875rem;
+    }
 
-  .section-content {
-    padding: 1.5rem;
-  }
+    h2 {
+        font-size: 1.5rem;
+    }
 
-  .section-items {
-    grid-template-columns: 1fr;
-  }
+    h3 {
+        font-size: 1.0625rem;
+    }
+
+    .typewriter h1 {
+        font-size: 1.75rem;
+        letter-spacing: 0.05em;
+    }
+
+    .section-content {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .section-content:hover {
+        transform: translateY(-2px);
+    }
+
+    .section-title {
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.625rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.375rem;
+        min-width: 150px;
+    }
+
+    .section-title h2::before {
+        height: 20px;
+    }
+
+    .section-items {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .section-items img {
+        height: 150px;
+    }
+
+    .tecnologies-container h3,
+    .projects-container h3 {
+        padding: 0.625rem 1rem;
+        font-size: 1rem;
+    }
+
+    .tecnologies-container h3:hover,
+    .projects-container h3:hover {
+        transform: translateX(4px);
+    }
+
+    .project-image {
+        height: 200px;
+        max-width: 100%;
+    }
+
+    .tag {
+        padding: 0.3125rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* Mobile portrait (hasta 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.625rem;
+    }
+
+    h2 {
+        font-size: 1.375rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .typewriter h1 {
+        font-size: 1.5rem;
+        white-space: normal;
+        border-right: none;
+        animation: none;
+        letter-spacing: 0.05em;
+    }
+
+    .typewriter h2 {
+        font-size: 1.25rem;
+        animation: none;
+        opacity: 1;
+    }
+
+    .section-content {
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.25rem;
+        width: 100%;
+    }
+
+    .section-title h2::before {
+        height: 18px;
+        width: 3px;
+    }
+
+    .section-items {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .section-items img {
+        height: 180px;
+    }
+
+    .tecnologies-container h3,
+    .projects-container h3 {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.9375rem;
+        margin: 0.375rem 0;
+    }
+
+    .project-image {
+        height: 180px;
+        border-radius: 10px;
+    }
+
+    .tag {
+        padding: 0.25rem 0.625rem;
+        font-size: 0.75rem;
+        margin: 0.1875rem;
+    }
+
+    /* Ajustes para párrafos en mobile */
+    p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+}
+
+/* Extra small devices (hasta 360px) */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 0.9375rem;
+    }
+
+    .typewriter h1 {
+        font-size: 1.375rem;
+    }
+
+    .typewriter h2 {
+        font-size: 1.125rem;
+    }
+
+    .section-content {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.125rem;
+        gap: 0.375rem;
+    }
+
+    .section-items img {
+        height: 160px;
+    }
+
+    .tecnologies-container h3,
+    .projects-container h3 {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .project-image {
+        height: 160px;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
 }

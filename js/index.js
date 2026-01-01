@@ -12,10 +12,8 @@ function loadPage(url, pageNumber) {
         content.classList.remove("slide-out")
         content.classList.add("slide-in")
 
-        // Cambiar item activo en navegación
-        window.changeNavItemSelect(pageNumber) // Assuming changeNavItemSelect is a global function
+        window.changeNavItemSelect(pageNumber)
 
-        // Remover clase de animación después de completar
         setTimeout(() => {
           content.classList.remove("slide-in")
         }, 600)
