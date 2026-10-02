@@ -1,28 +1,32 @@
-function loadPage(url, pageNumber) {
-  const content = document.getElementById("content")
+/* index.js — Transición de página con animación */
+/* La función loadPage real es definida en portfolio-loader.js (parcha navigator.js) */
+/* Este archivo se mantiene como referencia de la animación base */
 
-  // Animación de salida
-  content.classList.add("slide-out")
+window._baseLoadPage = function(url, pageNumber) {
+    const content = document.getElementById("content");
+    if (!content) return;
 
-  setTimeout(() => {
-    fetch(url)
-      .then((response) => response.text())
-      .then((html) => {
-        content.innerHTML = html
-        content.classList.remove("slide-out")
-        content.classList.add("slide-in")
+    content.classList.add("slide-out");
 
-        window.changeNavItemSelect(pageNumber)
+    setTimeout(() => {
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                content.innerHTML = html;
+                content.classList.remove("slide-out");
+                content.classList.add("slide-in");
 
-        setTimeout(() => {
-          content.classList.remove("slide-in")
-        }, 600)
-      })
-      .catch((error) => {
-        console.error("Error loading page:", error)
-        content.innerHTML =
-          '<div class="section-content"><h2>Error al cargar la página</h2><p>Por favor, intenta nuevamente.</p></div>'
-        content.classList.remove("slide-out")
-      })
-  }, 400)
-}
+                if (typeof window.changeNavItemSelect === 'function') {
+                    window.changeNavItemSelect(pageNumber);
+                }
+
+                setTimeout(() => content.classList.remove("slide-in"), 600);
+            })
+            .catch(error => {
+                console.error("Error loading page:", error);
+                content.innerHTML =
+                    '<div class="section-content"><h2>Error al cargar la página</h2><p>Por favor, intenta nuevamente.</p></div>';
+                content.classList.remove("slide-out");
+            });
+    }, 400);
+};

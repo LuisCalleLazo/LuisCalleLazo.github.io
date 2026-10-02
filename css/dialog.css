@@ -1,0 +1,418 @@
+/* ===================== DIALOG / LIGHTBOX — MSI Theme ===================== */
+
+/* Backdrop y dialog base */
+#portfolio-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+#portfolio-dialog[open] {
+    display: flex;
+}
+
+/* Backdrop oscuro con blur */
+#portfolio-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(6px);
+}
+
+/* Para navegadores que no soportan ::backdrop, usamos un pseudo-overlay */
+.dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: none;
+    animation: dialogFadeIn 0.25s ease;
+}
+
+.dialog-backdrop.active {
+    display: block;
+}
+
+/* Contenedor principal del dialog */
+.dialog-box {
+    position: relative;
+    background: linear-gradient(145deg, #111111 0%, #0a0000 100%);
+    border: 1px solid #2a0a0a;
+    border-radius: 16px;
+    box-shadow:
+        0 0 0 1px rgba(204, 0, 0, 0.15),
+        0 24px 60px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(204, 0, 0, 0.08);
+    max-width: min(820px, 92vw);
+    max-height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: dialogSlideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 10001;
+}
+
+@keyframes dialogFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes dialogSlideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* Cabecera del dialog */
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid #1a0505;
+    flex-shrink: 0;
+}
+
+.dialog-title {
+    font-family: 'Rajdhani', 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dialog-title i {
+    color: #cc0000;
+    font-size: 1rem;
+}
+
+.dialog-counter {
+    font-size: 0.75rem;
+    color: #666;
+    margin-left: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+/* Botón cerrar */
+.dialog-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(204, 0, 0, 0.1);
+    border: 1px solid rgba(204, 0, 0, 0.3);
+    color: #ff3333;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.dialog-close:hover {
+    background: rgba(204, 0, 0, 0.25);
+    border-color: #cc0000;
+    box-shadow: 0 0 12px rgba(204, 0, 0, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Área de imagen con navegación */
+.dialog-image-area {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 200px;
+    background: #050505;
+}
+
+.dialog-img {
+    max-width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.dialog-img.transitioning {
+    opacity: 0;
+}
+
+/* Flechas de navegación */
+.dialog-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid rgba(204, 0, 0, 0.4);
+    color: #ff3333;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+}
+
+.dialog-nav:hover {
+    background: rgba(204, 0, 0, 0.2);
+    border-color: #cc0000;
+    box-shadow: 0 0 16px rgba(204, 0, 0, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.dialog-nav:disabled {
+    opacity: 0.25;
+    cursor: default;
+    pointer-events: none;
+}
+
+.dialog-nav.prev { left: 12px; }
+.dialog-nav.next { right: 12px; }
+
+/* Zona inferior: descripción + dots */
+.dialog-footer {
+    padding: 1rem 1.5rem 1.2rem;
+    border-top: 1px solid #1a0505;
+    flex-shrink: 0;
+}
+
+.dialog-description {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 1.4em;
+    transition: opacity 0.2s ease;
+}
+
+.dialog-description.transitioning {
+    opacity: 0;
+}
+
+.dialog-description:empty::before {
+    content: "Sin descripción";
+    color: #444;
+    font-style: italic;
+}
+
+/* Dots de navegación */
+.dialog-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 0.8rem;
+}
+
+.dialog-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2a0a0a;
+    border: 1px solid rgba(204, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.dialog-dot.active {
+    background: #cc0000;
+    border-color: #cc0000;
+    box-shadow: 0 0 8px rgba(204, 0, 0, 0.6);
+    transform: scale(1.3);
+}
+
+.dialog-dot:hover:not(.active) {
+    background: rgba(204, 0, 0, 0.4);
+}
+
+/* Línea decorativa superior del dialog */
+.dialog-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #cc0000, #ff4d6d, #cc0000, transparent);
+    border-radius: 16px 16px 0 0;
+}
+
+/* ===== GALERÍA en sección (thumbnails clickeables) ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.gallery-thumb {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #2a0a0a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    aspect-ratio: 16/10;
+    background: #0a0000;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.gallery-thumb:hover {
+    border-color: #cc0000;
+    box-shadow: 0 0 16px rgba(204, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.gallery-thumb:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.75) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.gallery-thumb:hover .gallery-thumb-overlay {
+    opacity: 1;
+}
+
+.gallery-thumb-overlay i {
+    color: #ff4d6d;
+    font-size: 1rem;
+}
+
+/* Botón "Ver galería" para cuando hay gallery pero no se muestran thumbs inline */
+.gallery-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+    padding: 0.45rem 1rem;
+    background: rgba(204, 0, 0, 0.1);
+    border: 1px solid rgba(204, 0, 0, 0.35);
+    border-radius: 8px;
+    color: #ff3333;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.gallery-btn:hover {
+    background: rgba(204, 0, 0, 0.2);
+    border-color: #cc0000;
+    box-shadow: 0 0 12px rgba(204, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+/* ===== Technology item con logo ===== */
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0;
+    background: rgba(10, 0, 0, 0.6);
+    border-left: 3px solid #cc0000;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-item.has-gallery {
+    cursor: pointer;
+}
+
+.tech-item:hover {
+    background: #1a0505;
+    transform: translateX(8px);
+    border-left-color: #ff4d6d;
+    color: #f0f0f0;
+}
+
+.tech-item.has-gallery:hover {
+    box-shadow: 0 0 14px rgba(204, 0, 0, 0.15);
+}
+
+.tech-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.tech-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #c8c8c8;
+    flex: 1;
+}
+
+.tech-gallery-icon {
+    color: #cc0000;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.tech-item.has-gallery:hover .tech-gallery-icon {
+    opacity: 1;
+    color: #ff4d6d;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .dialog-box {
+        max-width: 96vw;
+        max-height: 92vh;
+        border-radius: 12px;
+    }
+    .dialog-header { padding: 0.9rem 1.1rem; }
+    .dialog-title  { font-size: 1rem; }
+    .dialog-footer { padding: 0.8rem 1.1rem 1rem; }
+    .dialog-img    { max-height: 45vh; }
+    .dialog-nav    { width: 34px; height: 34px; font-size: 1.1rem; }
+    .dialog-nav.prev { left: 6px; }
+    .dialog-nav.next { right: 6px; }
+    .gallery-grid  { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.5rem; }
+}

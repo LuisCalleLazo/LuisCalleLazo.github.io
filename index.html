@@ -3,37 +3,101 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Deynar Calle - Desarrollador Backend</title>
-        <meta
-            name="google-site-verification"
-            content="l64vHEqrSzV9ab0WXgWeSq85H34u03-0qCs8gVDRCmg"
-        />
-        <link
-            rel="icon"
-            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRztPw9JgCG2FtbG2Tcpek2OvZmNX7aYtZ03Q&s"
-        />
+        <title>Deynar Calle — Desarrollador Backend</title>
+        <meta name="description" content="Portafolio de Luis Calle Lazo, Desarrollador Backend especializado en ASP.NET, Django, Flutter y arquitecturas escalables." />
+        <meta name="google-site-verification" content="l64vHEqrSzV9ab0WXgWeSq85H34u03-0qCs8gVDRCmg" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/icons/logo.png" />
+
+        <!-- Bootstrap Icons -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
+
+        <!-- Estilos propios -->
         <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/loader.css" />
         <link rel="stylesheet" href="css/navigator.css" />
         <link rel="stylesheet" href="css/content.css" />
         <link rel="stylesheet" href="css/animations.css" />
-        <link rel="icon" type="image/png" href="assets/icons/logo.png" />
+        <link rel="stylesheet" href="css/dialog.css" />
     </head>
     <body>
-        <!-- Header Mobile -->
+
+        <!-- ===== PANTALLA DE CARGA ===== -->
+        <div id="loader">
+            <!-- Partículas de fondo -->
+            <div class="loader-particles">
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+                <div class="loader-particle"></div>
+            </div>
+
+            <!-- Spinner + texto central -->
+            <div class="loader-wrapper">
+                <!-- Gradiente SVG -->
+                <svg width="0" height="0" style="position:absolute">
+                    <defs>
+                        <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%"   stop-color="#cc0000" />
+                            <stop offset="50%"  stop-color="#ff4d6d" />
+                            <stop offset="100%" stop-color="#cc0000" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <!-- Track del círculo -->
+                <div class="loader-track"></div>
+
+                <!-- Arco giratorio SVG -->
+                <svg class="loader-spinner" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="90" cy="90" r="85" />
+                </svg>
+
+                <!-- Punto al final del arco -->
+                <div class="loader-dot"></div>
+
+                <!-- Texto central pulsante -->
+                <div class="loader-text">
+                    <span class="main-word">Software</span>
+                    <span class="sub-word">Dev Portfolio</span>
+                </div>
+            </div>
+
+            <!-- Barras cyber decorativas -->
+            <div class="loader-cyber">
+                <div class="loader-cyber-bar"></div>
+                <div class="loader-cyber-bar"></div>
+                <div class="loader-cyber-bar"></div>
+                <div class="loader-cyber-bar"></div>
+                <div class="loader-cyber-bar"></div>
+            </div>
+        </div>
+        <!-- /PANTALLA DE CARGA -->
+
+        <!-- ===== HEADER MOBILE ===== -->
         <div class="mobile-header">
             <div class="mobile-header-content">
                 <img
                     src="assets/imgs/foto.png"
                     alt="Luis Calle Lazo"
                     class="mobile-profile-pic"
+                    id="mobile-profile-pic"
                 />
                 <div class="mobile-info">
-                    <h3>Luis Calle Lazo</h3>
-                    <p>Desarrollador Backend</p>
+                    <h3 id="mobile-name">Luis Calle Lazo</h3>
+                    <p id="mobile-title">Desarrollador Backend</p>
                 </div>
             </div>
             <button class="hamburger-btn" id="hamburger-btn" aria-label="Menú">
@@ -46,40 +110,28 @@
         <!-- Overlay para cerrar el menú -->
         <div class="menu-overlay" id="menu-overlay"></div>
 
-        <!-- Navigator Mobile -->
+        <!-- ===== NAVIGATOR MOBILE ===== -->
         <nav class="navigator-mobile" id="navigator-mobile">
             <div class="mobile-nav-content">
-                <div
-                    class="nav-item-container"
-                    id="nav-item-container-mobile"
-                ></div>
+                <div class="nav-item-container" id="nav-item-container-mobile"></div>
                 <div class="links-container">
                     <div class="link-item">
                         <i class="bi bi-github"></i>
-                        <a
-                            href="https://github.com/LuisCalleLazo"
-                            target="_blank"
-                            >Github</a
-                        >
+                        <a href="https://github.com/LuisCalleLazo" target="_blank">Github</a>
                     </div>
                     <div class="link-item">
                         <i class="bi bi-linkedin"></i>
-                        <a
-                            href="https://www.linkedin.com/in/deynar-luis-calle-lazo-bb946025b/"
-                            target="_blank"
-                            >Linkedin</a
-                        >
+                        <a href="https://www.linkedin.com/in/deynar-luis-calle-lazo-bb946025b/" target="_blank">Linkedin</a>
                     </div>
                     <div class="link-item">
                         <i class="bi bi-whatsapp"></i>
-                        <a href="https://wa.me/59178824516" target="_blank"
-                            >Whatsapp</a
-                        >
+                        <a href="https://wa.me/59178824516" target="_blank">Whatsapp</a>
                     </div>
                 </div>
             </div>
         </nav>
 
+        <!-- ===== LAYOUT PRINCIPAL ===== -->
         <div class="container">
             <div class="navigator-desktop" id="navigator">
                 <div class="cyber-content">
@@ -98,6 +150,45 @@
             <div class="main-container" id="content"></div>
         </div>
 
+        <!-- ===== DIALOG LIGHTBOX ===== -->
+        <!-- Backdrop fallback (para navegadores sin ::backdrop nativo) -->
+        <div id="dialog-backdrop" class="dialog-backdrop"></div>
+
+        <dialog id="portfolio-dialog" aria-modal="true" aria-labelledby="dialog-title-text">
+            <div class="dialog-box">
+                <!-- Cabecera -->
+                <div class="dialog-header">
+                    <div class="dialog-title">
+                        <i class="bi bi-images"></i>
+                        <span id="dialog-title-text">Galería</span>
+                        <span id="dialog-counter" class="dialog-counter"></span>
+                    </div>
+                    <button class="dialog-close" id="dialog-close-btn" aria-label="Cerrar" onclick="PortfolioDialog.close()">&times;</button>
+                </div>
+
+                <!-- Imagen con flechas -->
+                <div class="dialog-image-area">
+                    <button class="dialog-nav prev" id="dialog-prev" aria-label="Anterior" onclick="PortfolioDialog.prev()">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <img id="dialog-img" src="" alt="" class="dialog-img" />
+                    <button class="dialog-nav next" id="dialog-next" aria-label="Siguiente" onclick="PortfolioDialog.next()">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Descripción + dots -->
+                <div class="dialog-footer">
+                    <p id="dialog-desc" class="dialog-description"></p>
+                    <div id="dialog-dots" class="dialog-dots"></div>
+                </div>
+            </div>
+        </dialog>
+        <!-- /DIALOG LIGHTBOX -->
+
+        <!-- ===== SCRIPTS ===== -->
+        <script src="js/dialog.js" charset="utf-8"></script>
+        <script src="js/portfolio-loader.js" charset="utf-8"></script>
         <script src="js/navigator.js" charset="utf-8"></script>
         <script src="js/index.js" charset="utf-8"></script>
         <script src="js/mobile-menu.js" charset="utf-8"></script>

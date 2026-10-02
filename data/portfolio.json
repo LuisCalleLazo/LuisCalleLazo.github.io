@@ -1,0 +1,344 @@
+{
+  "profile": {
+    "name": "Deynar Calle",
+    "title": "Desarrollador Backend",
+    "photo": "assets/imgs/foto.png",
+    "social": {
+      "github": "https://github.com/LuisCalleLazo",
+      "linkedin": "https://www.linkedin.com/in/deynar-luis-calle-lazo-bb946025b/",
+      "whatsapp": "https://wa.me/59178824516"
+    }
+  },
+
+  "about": {
+    "description": "Desarrollador Backend apasionado por crear soluciones eficientes y escalables. Con experiencia en múltiples tecnologías y frameworks, me especializo en el desarrollo de sistemas robustos y APIs REST. Siempre en búsqueda de nuevos desafíos y oportunidades para aprender y crecer profesionalmente.",
+    "interests": {
+      "games": [
+        { "name": "Left 4 Dead",  "image": "assets/imgs/left4dead.png" },
+        { "name": "Warcraft III", "image": "assets/imgs/warcraftIII.png" }
+      ],
+      "sports": ["Fútbol", "Natación"]
+    }
+  },
+
+  "projects": [
+    {
+      "title": "Sistema Contable Empresarial",
+      "status": "En Desarrollo",
+      "statusColor": "#f59e0b",
+      "visibility": "Privado",
+      "visibilityColor": "#cc0000",
+      "description": "Sistema completo de contabilidad empresarial con generación de estados financieros, integración con el Banco Central de Bolivia para obtención de UFVs y reportes avanzados.",
+      "images": [
+        {
+          "src": "assets/imgs/warcraftIII.png",
+          "description": "Dashboard principal con resumen financiero del periodo"
+        },
+        {
+          "src": "assets/imgs/warcraftIII.png",
+          "description": "Módulo de estados financieros — balance general"
+        }
+      ],
+      "link": "",
+      "languages": ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"],
+      "features": [
+        "Desarrollo de estados financieros completos (balance general, estado de resultados, flujo de efectivo)",
+        "Integración con BCB para obtención automática de Unidades de Fomento de Vivienda (UFVs)"
+      ]
+    },
+    {
+      "title": "Sistema de Campus Virtual",
+      "status": "Finalizado",
+      "statusColor": "#10b981",
+      "visibility": "Público",
+      "visibilityColor": "#f59e0b",
+      "description": "Plataforma educativa completa con reportes gráficos del progreso estudiantil, arquitectura MVC y APIs REST para integración con sistemas externos.",
+      "images": [
+        {
+          "src": "assets/imgs/warcraftIII.png",
+          "description": "Vista del panel estudiantil con progreso académico"
+        },
+        {
+          "src": "assets/imgs/warcraftIII.png",
+          "description": "Reportes gráficos de rendimiento por materia"
+        }
+      ],
+      "link": "",
+      "languages": ["C#", "ASP.NET MVC", "SQL Server", "JavaScript"],
+      "features": [
+        "Reportes con gráficas del progreso estudiantil",
+        "Arquitectura MVC",
+        "APIs REST para integraciones"
+      ]
+    },
+    {
+      "title": "Learning Management System (LMS)",
+      "status": "",
+      "statusColor": "",
+      "visibility": "Privado",
+      "visibilityColor": "#cc0000",
+      "description": "Sistema de gestión de aprendizaje con arquitectura de microservicios, reportes avanzados con gráficas y comunicación cliente-servidor de alta disponibilidad.",
+      "images": [
+        {
+          "src": "assets/imgs/lms_1.png",
+          "description": "Panel de administración de cursos y módulos"
+        }
+      ],
+      "link": "",
+      "languages": ["C#", ".NET", "Docker", "RabbitMQ", "SQL Server"],
+      "features": [
+        "Reportes con gráficas avanzadas",
+        "Arquitectura de Microservicios",
+        "Arquitectura Cliente-Servidor"
+      ]
+    },
+    {
+      "title": "Videojuego de Carreras",
+      "status": "En Progreso",
+      "statusColor": "#f59e0b",
+      "visibility": "Público",
+      "visibilityColor": "#f59e0b",
+      "description": "Videojuego de carreras multijugador con mapa infinito generado proceduralmente y obstáculos dinámicos, desarrollado en Unity Engine.",
+      "images": [
+        {
+          "src": "assets/imgs/racing_1.png",
+          "description": "Gameplay — pista infinita con obstáculos dinámicos"
+        },
+        {
+          "src": "assets/imgs/racing_2.png",
+          "description": "Lobby multijugador para partidas con amigos"
+        }
+      ],
+      "link": "",
+      "languages": ["C#", "Unity Engine"],
+      "features": [
+        "Modo multijugador con amigos",
+        "Mapa infinito con obstáculos dinámicos"
+      ]
+    },
+    {
+      "title": "Traductor de Lenguaje de Señas",
+      "status": "",
+      "statusColor": "",
+      "visibility": "Privado",
+      "visibilityColor": "#cc0000",
+      "description": "Sistema de inteligencia artificial para interpretar lenguaje de señas en tiempo real mediante reconocimiento de movimientos de manos usando visión por computadora.",
+      "images": [
+        {
+          "src": "assets/imgs/lsm_1.png",
+          "description": "Interfaz de traducción en tiempo real con detección de manos"
+        }
+      ],
+      "link": "",
+      "languages": ["Python", "OpenCV", "TensorFlow", "MediaPipe"],
+      "features": [
+        "Algoritmos de IA para interpretación de movimientos",
+        "Reconocimiento en tiempo real"
+      ]
+    }
+  ],
+
+  "technologies": [
+    {
+      "category": "Desarrollo Backend",
+      "icon": "bi bi-server",
+      "items": [
+        {
+          "name": "ASP.NET Core",
+          "logo": "https://www.google.com/s2/favicons?domain=dotnet.microsoft.com&sz=256",
+          "gallery": [
+            { "src": "assets/imgs/dotnet_work_1.png", "description": "API REST con ASP.NET Core — Sistema Contable" }
+          ]
+        },
+        {
+          "name": ".NET Framework",
+          "logo": "https://www.google.com/s2/favicons?domain=dotnet.microsoft.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Django (Python)",
+          "logo": "https://static.djangoproject.com/img/logos/django-logo-negative.svg",
+          "gallery": []
+        },
+        {
+          "name": "Laravel (PHP)",
+          "logo": "https://www.google.com/s2/favicons?domain=laravel.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Jasper Reports",
+          "logo": "https://www.google.com/s2/favicons?domain=community.jaspersoft.com&sz=256",
+          "gallery": []
+        }
+      ]
+    },
+    {
+      "category": "Desarrollo Mobile",
+      "icon": "bi bi-phone",
+      "items": [
+        {
+          "name": "Flutter",
+          "logo": "https://www.google.com/s2/favicons?domain=flutter.dev&sz=256",
+          "gallery": [
+            { "src": "assets/imgs/flutter_work_1.png", "description": "App móvil con Flutter — módulo de autenticación" }
+          ]
+        },
+        {
+          "name": "Kotlin",
+          "logo": "https://www.google.com/s2/favicons?domain=kotlinlang.org&sz=256",
+          "gallery": []
+        }
+      ]
+    },
+    {
+      "category": "Gestión de Proyectos",
+      "icon": "bi bi-kanban",
+      "items": [
+        {
+          "name": "Jira",
+          "logo": "https://www.google.com/s2/favicons?domain=atlassian.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Trello",
+          "logo": "https://www.google.com/s2/favicons?domain=trello.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Notion",
+          "logo": "https://www.google.com/s2/favicons?domain=notion.so&sz=256",
+          "gallery": []
+        }
+      ]
+    },
+    {
+      "category": "Infraestructura en la Nube",
+      "icon": "bi bi-cloud",
+      "items": [
+        {
+          "name": "Digital Ocean",
+          "logo": "https://www.google.com/s2/favicons?domain=digitalocean.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Microsoft Azure",
+          "logo": "https://www.google.com/s2/favicons?domain=azure.microsoft.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Atlantic.Net",
+          "logo": "https://www.google.com/s2/favicons?domain=atlantic.net&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Namecheap",
+          "logo": "https://www.google.com/s2/favicons?domain=namecheap.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "Avancehost",
+          "logo": "https://www.google.com/s2/favicons?domain=avancehost.com&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "NIC Bolivia",
+          "logo": "https://www.google.com/s2/favicons?domain=nic.bo&sz=256",
+          "gallery": []
+        }
+      ]
+    },
+    {
+      "category": "Diagramas de Software",
+      "icon": "bi bi-diagram-3",
+      "items": [
+        {
+          "name": "draw.io",
+          "logo": "https://www.google.com/s2/favicons?domain=app.diagrams.net&sz=256",
+          "gallery": [
+            { "src": "assets/imgs/drawio_1.png", "description": "Diagrama de arquitectura de microservicios — LMS" }
+          ]
+        },
+        {
+          "name": "Lucidchart",
+          "logo": "https://www.google.com/s2/favicons?domain=lucidchart.com&sz=256",
+          "gallery": []
+        }
+      ]
+    },
+    {
+      "category": "Desarrollo de Videojuegos",
+      "icon": "bi bi-controller",
+      "items": [
+        {
+          "name": "Unity Engine",
+          "logo": "https://www.google.com/s2/favicons?domain=unity.com&sz=256",
+          "gallery": [
+            { "src": "assets/imgs/unity_1.png", "description": "Escena del videojuego de carreras — mapa infinito" }
+          ]
+        },
+        {
+          "name": "Blender (Modelado 3D)",
+          "logo": "https://www.google.com/s2/favicons?domain=blender.org&sz=256",
+          "gallery": []
+        },
+        {
+          "name": "C# para Unity",
+          "logo": "https://www.google.com/s2/favicons?domain=learn.microsoft.com&sz=256",
+          "gallery": []
+        }
+      ]
+    }
+  ],
+
+  "education": {
+    "universities": [
+      {
+        "name": "Universidad Franz Tamayo (UNIFRANZ)",
+        "icon": "bi bi-building",
+        "degree": "Ingeniería de Sistemas",
+        "semester": "8vo",
+        "achievements": [
+          "Líder de Comunidad de Videojuegos (2023/II)",
+          "Ayudante de Programación I"
+        ],
+        "gallery": [
+          {
+            "src": "assets/imgs/unifranz_1.png",
+            "description": "Reconocimiento como Líder de Comunidad de Videojuegos — 2023/II"
+          },
+          {
+            "src": "assets/imgs/unifranz_2.png",
+            "description": "Certificado de Ayudante de Programación I"
+          }
+        ]
+      }
+    ],
+    "courses": [
+      {
+        "platform": "Udemy",
+        "description": "Cursos especializados en desarrollo web, backend y arquitectura de software",
+        "gallery": [
+          {
+            "src": "assets/imgs/udemy_cert.png",
+            "description": "Certificado de finalización — Curso de ASP.NET Core"
+          }
+        ]
+      },
+      {
+        "platform": "Platzi",
+        "description": "Rutas de aprendizaje en desarrollo profesional y tecnologías modernas",
+        "gallery": []
+      },
+      {
+        "platform": "EDteam",
+        "description": "Cursos de programación y desarrollo de software en español",
+        "gallery": []
+      },
+      {
+        "platform": "Píldoras Informáticas",
+        "description": "Tutoriales y formación en múltiples lenguajes de programación",
+        "gallery": []
+      }
+    ]
+  }
+}

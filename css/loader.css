@@ -1,0 +1,196 @@
+/* ===================== LOADER SCREEN ===================== */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.6s ease-out;
+}
+
+#loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#loader.hidden {
+    display: none;
+}
+
+/* Contenedor del spinner */
+.loader-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+}
+
+/* Círculo de fondo (track) */
+.loader-track {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid rgba(204, 0, 0, 0.18);
+}
+
+/* Spinner SVG giratorio */
+.loader-spinner {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    animation: spinnerRotate 1.8s linear infinite;
+}
+
+.loader-spinner circle {
+    fill: none;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 140;
+    stroke: url(#redGradient);
+    filter: drop-shadow(0 0 8px rgba(204, 0, 0, 0.8));
+}
+
+@keyframes spinnerRotate {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Punto al final del arco */
+.loader-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ff3333;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ff3333, 0 0 24px rgba(255, 51, 51, 0.5);
+    /* Posición: extremo del arco (parte de abajo del círculo) */
+    top: calc(50% + 85px);
+    left: calc(50% - 4px);
+    transform-origin: center calc(-85px + 4px);
+    animation: dotRotate 1.8s linear infinite;
+}
+
+@keyframes dotRotate {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Texto central pulsante */
+.loader-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: loaderPulse 1.8s ease-in-out infinite alternate;
+}
+
+.loader-text span.main-word {
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #cc0000 0%, #ff4d6d 60%, #cc0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(204, 0, 0, 0.6));
+    line-height: 1;
+}
+
+.loader-text span.sub-word {
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    color: rgba(255, 77, 109, 0.7);
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+@keyframes loaderPulse {
+    0%   { transform: scale(0.78); opacity: 0.7; }
+    100% { transform: scale(1.0);  opacity: 1; }
+}
+
+/* Partículas decorativas de fondo */
+.loader-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.loader-particle {
+    position: absolute;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(180deg, transparent, rgba(204, 0, 0, 0.5), transparent);
+    border-radius: 2px;
+    animation: particleFall linear infinite;
+    opacity: 0;
+}
+
+.loader-particle:nth-child(1)  { left: 10%;  animation-duration: 3.2s; animation-delay: 0.0s; }
+.loader-particle:nth-child(2)  { left: 20%;  animation-duration: 2.8s; animation-delay: 0.4s; }
+.loader-particle:nth-child(3)  { left: 30%;  animation-duration: 3.5s; animation-delay: 0.8s; }
+.loader-particle:nth-child(4)  { left: 40%;  animation-duration: 2.6s; animation-delay: 1.2s; }
+.loader-particle:nth-child(5)  { left: 50%;  animation-duration: 3.0s; animation-delay: 0.2s; }
+.loader-particle:nth-child(6)  { left: 60%;  animation-duration: 2.9s; animation-delay: 0.6s; }
+.loader-particle:nth-child(7)  { left: 70%;  animation-duration: 3.3s; animation-delay: 1.0s; }
+.loader-particle:nth-child(8)  { left: 80%;  animation-duration: 2.7s; animation-delay: 1.4s; }
+.loader-particle:nth-child(9)  { left: 90%;  animation-duration: 3.1s; animation-delay: 0.5s; }
+.loader-particle:nth-child(10) { left: 15%;  animation-duration: 2.5s; animation-delay: 0.9s; }
+.loader-particle:nth-child(11) { left: 55%;  animation-duration: 3.4s; animation-delay: 0.3s; }
+.loader-particle:nth-child(12) { left: 75%;  animation-duration: 2.4s; animation-delay: 1.1s; }
+
+@keyframes particleFall {
+    0%   { top: -60px; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { top: calc(100vh + 60px); opacity: 0; }
+}
+
+/* Líneas cyber decorativas en el loader */
+.loader-cyber {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.loader-cyber-bar {
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(204,0,0,0.6), transparent);
+    border-radius: 2px;
+    animation: cyberBarAnim 1.8s ease-in-out infinite;
+}
+
+.loader-cyber-bar:nth-child(1) { animation-delay: 0.0s; }
+.loader-cyber-bar:nth-child(2) { animation-delay: 0.2s; width: 20px; }
+.loader-cyber-bar:nth-child(3) { animation-delay: 0.4s; }
+.loader-cyber-bar:nth-child(4) { animation-delay: 0.2s; width: 20px; }
+.loader-cyber-bar:nth-child(5) { animation-delay: 0.0s; }
+
+@keyframes cyberBarAnim {
+    0%, 100% { opacity: 0.2; }
+    50%       { opacity: 1; box-shadow: 0 0 8px rgba(204,0,0,0.5); }
+}

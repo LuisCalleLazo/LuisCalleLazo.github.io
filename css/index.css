@@ -1,22 +1,32 @@
-/* Variables CSS */
+/* ===================== Variables CSS — Paleta MSI Rojo/Negro/Rosa ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-    --color-primary: #0ea5e9;
-    --color-primary-dark: #0284c7;
-    --color-primary-light: #38bdf8;
-    --color-accent: #f59e0b;
-    --color-accent-light: #fbbf24;
-    --bg-dark: #0f172a;
-    --bg-darker: #020617;
-    --bg-card: #1e293b;
-    --bg-card-hover: #334155;
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
+    /* Colores principales — MSI Dark Red */
+    --color-primary:       #cc0000;
+    --color-primary-dark:  #990000;
+    --color-primary-light: #ff3333;
+    /* Acento rosa — sutil pero notable */
+    --color-accent:        #ff4d6d;
+    --color-accent-light:  #ff6b84;
+    /* Fondos negros profundos */
+    --bg-dark:      #0a0a0a;
+    --bg-darker:    #050505;
+    --bg-card:      #111111;
+    --bg-card-hover:#1a0505;
+    /* Textos */
+    --text-primary:   #f0f0f0;
+    --text-secondary: #c8c8c8;
+    --text-muted:     #888888;
+    /* Bordes */
+    --border-color: #2a0a0a;
+    --border-accent: #3d0000;
+    /* Sombras */
+    --shadow-sm:   0 2px 8px  rgba(0, 0, 0, 0.5);
+    --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.6);
+    --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.7);
+    --shadow-glow: 0 0 20px rgba(204, 0, 0, 0.35);
+    --shadow-glow-accent: 0 0 20px rgba(255, 77, 109, 0.25);
 }
 
 * {
@@ -26,12 +36,8 @@
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(
-        135deg,
-        var(--bg-darker) 0%,
-        var(--bg-dark) 100%
-    );
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-darker);
     color: var(--text-primary);
     line-height: 1.6;
     overflow: hidden;
@@ -39,7 +45,7 @@ body {
 
 /* Scrollbar personalizado */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -48,13 +54,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
+    background: var(--color-primary-dark);
     border-radius: 10px;
     transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-light);
+    background: var(--color-primary);
 }
 
 .container {
@@ -76,8 +82,8 @@ body {
     padding: 2rem;
     background: linear-gradient(
         135deg,
-        rgba(15, 23, 42, 0.95) 0%,
-        rgba(2, 6, 23, 0.98) 100%
+        rgba(10, 0, 0, 0.98) 0%,
+        rgba(5, 0, 0, 1) 100%
     );
 }
 
@@ -86,18 +92,16 @@ body {
     .container {
         grid-template-columns: 240px 1fr;
     }
-
     .main-container {
         padding: 1.5rem;
     }
 }
 
-/* Mobile (hasta 768px) - CON MENÚ HAMBURGUESA */
+/* Mobile (hasta 768px) — CON MENÚ HAMBURGUESA */
 @media (max-width: 768px) {
     body {
         overflow-y: auto;
     }
-
     .container {
         grid-template-columns: 1fr;
         grid-template-areas: "main";
@@ -105,11 +109,9 @@ body {
         min-height: 100vh;
         padding-top: 0;
     }
-
     .navigator-desktop {
         grid-area: unset;
     }
-
     .main-container {
         padding: 1.5rem 1rem;
         min-height: calc(100vh - 90px);
