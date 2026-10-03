@@ -2,7 +2,7 @@
   "profile": {
     "name": "Deynar Calle",
     "title": "Desarrollador Backend",
-    "photo": "assets/imgs/foto.png",
+    "photo": "assets/imgs/about/foto.png",
     "social": {
       "github": "https://github.com/LuisCalleLazo",
       "linkedin": "https://www.linkedin.com/in/deynar-luis-calle-lazo-bb946025b/",
@@ -14,14 +14,66 @@
     "description": "Desarrollador Backend apasionado por crear soluciones eficientes y escalables. Con experiencia en múltiples tecnologías y frameworks, me especializo en el desarrollo de sistemas robustos y APIs REST. Siempre en búsqueda de nuevos desafíos y oportunidades para aprender y crecer profesionalmente.",
     "interests": {
       "games": [
-        { "name": "Left 4 Dead",  "image": "assets/imgs/left4dead.png" },
-        { "name": "Warcraft III", "image": "assets/imgs/warcraftIII.png" }
+        { "name": "Left 4 Dead",  "image": "assets/imgs/about/left4dead.png" },
+        { "name": "Warcraft III", "image": "assets/imgs/about/warcraftIII.png" }
       ],
       "sports": ["Fútbol", "Natación"]
     }
   },
 
   "projects": [
+    {
+      "title": "Pagina Web editable para Trading Bridge Solutions",
+      "status": "Finalizado",
+      "statusColor": "#10b981",
+      "visibility": "Privado",
+      "visibilityColor": "#cc0000",
+      "description": "Pagina web de empresa con opcion de edicion en la pagina por google auth",
+      "images": [
+        {
+          "src": "assets/imgs/projects/trading_solutions_job_4.png",
+          "description": "Vista inicial"
+        },
+        {
+          "src": "assets/imgs/projects/trading_solutions_job_1.png",
+          "description": "Vista de servicios con opcion de edicion"
+        },
+        {
+          "src": "assets/imgs/projects/trading_solutions_job_2.png",
+          "description": "Formularios de edicion para los servicios"
+        },
+        {
+          "src": "assets/imgs/projects/trading_solutions_job_3.png",
+          "description": "Autenticacion por google"
+        }
+      ],
+      "link": "https://tradingbridgesolutions.com/",
+      "languages": ["React Ts", "Cloudinary"],
+      "features": [
+        "Mini base de datos para crear, editar y eliminar los servicios",
+        "Integración con Google Auth"
+      ]
+    },
+    {
+      "title": "Pagina Web para Cotel",
+      "status": "Finalizado",
+      "statusColor": "#10b981",
+      "visibility": "Privado",
+      "visibilityColor": "#cc0000",
+      "description": "Pagina web de propuesta para la empresa (Fue usada por un tiempo)",
+      "images": [
+        {
+          "src": "assets/imgs/projects/cotel_job_1.png",
+          "description": "Vista de carga"
+        },
+        {
+          "src": "assets/imgs/projects/cotel_job_2.png",
+          "description": "Vista de inicial"
+        }
+      ],
+      "link": "https://cotel-landing-page.cotel-sistemas2026.workers.dev/",
+      "languages": ["React Ts"]
+    },
     {
       "title": "Sistema Contable Empresarial",
       "status": "En Desarrollo",
@@ -173,20 +225,34 @@
       ]
     },
     {
-      "category": "Desarrollo Mobile",
+      "category": "Desarrollo Front-End",
       "icon": "bi bi-phone",
       "items": [
         {
           "name": "Flutter",
           "logo": "https://www.google.com/s2/favicons?domain=flutter.dev&sz=256",
           "gallery": [
-            { "src": "assets/imgs/flutter_work_1.png", "description": "App móvil con Flutter — módulo de autenticación" }
+            {
+              "src": "assets/imgs/tecnologies/flutter_work_1.png",
+              "description": "Manejo de arquitectura limpia"
+            },
+            {
+              "src": "assets/imgs/tecnologies/flutter_work_2.png",
+              "description": "Arquitectura limpia con providers"
+            },
+            {
+              "src": "assets/imgs/tecnologies/flutter_work_3.png",
+              "description": "Manejo de go_router con sessiones"
+            }
           ]
         },
+
         {
-          "name": "Kotlin",
-          "logo": "https://www.google.com/s2/favicons?domain=kotlinlang.org&sz=256",
-          "gallery": []
+          "name": "React",
+          "logo": "https://www.google.com/s2/favicons?domain=es.react.dev/&sz=256",
+          "gallery": [
+            { "src": "assets/imgs/flutter_work_1.png", "description": "App móvil con Flutter — módulo de autenticación" }
+          ]
         }
       ]
     },
@@ -216,9 +282,12 @@
       "icon": "bi bi-cloud",
       "items": [
         {
-          "name": "Digital Ocean",
-          "logo": "https://www.google.com/s2/favicons?domain=digitalocean.com&sz=256",
-          "gallery": []
+          "name": "HostHatch",
+          "logo": "https://www.google.com/s2/favicons?domain=cloud.hosthatch.com&sz=256",
+          "gallery": [
+            "assets/imgs/tecnologies/hosthatch1.png",
+            "assets/imgs/tecnologies/hosthatch2.png"
+          ]
         },
         {
           "name": "Microsoft Azure",
@@ -243,7 +312,9 @@
         {
           "name": "NIC Bolivia",
           "logo": "https://www.google.com/s2/favicons?domain=nic.bo&sz=256",
-          "gallery": []
+          "gallery": [
+            "assets/imgs/tecnologies/nic.png"
+          ]
         }
       ]
     },
@@ -296,24 +367,45 @@
         "name": "Universidad Franz Tamayo (UNIFRANZ)",
         "icon": "bi bi-building",
         "degree": "Ingeniería de Sistemas",
-        "semester": "8vo",
+        "semester": "9no",
         "achievements": [
           "Líder de Comunidad de Videojuegos (2023/II)",
           "Ayudante de Programación I"
         ],
         "gallery": [
           {
-            "src": "assets/imgs/unifranz_1.png",
+            "src": "assets/imgs/education/noxun_certificado.jpeg",
+            "description": "Certificado de practica profesional en NOXUN"
+          },
+          {
+            "src": "assets/imgs/education/lider_videojuegos.jpeg",
             "description": "Reconocimiento como Líder de Comunidad de Videojuegos — 2023/II"
           },
           {
-            "src": "assets/imgs/unifranz_2.png",
-            "description": "Certificado de Ayudante de Programación I"
+            "src": "assets/imgs/education/aprecia_certificado.jpeg",
+            "description": "Reconocimiento a la creacion de solucion tecnologia para APRECIA - por parte de la organizacion"
+          },
+          {
+            "src": "assets/imgs/education/aprecia_certificado2.jpeg",
+            "description": "Reconocimiento a la creacion de solucion tecnologia para APRECIA - por parte de la universidad"
+          },
+          {
+            "src": "assets/imgs/education/primer_lugar_game_jam.jpeg",
+            "description": "Primer Lugar en GameJam de la universidad"
+          },
+          {
+            "src": "assets/imgs/education/reconocimiento_ratland.jpeg",
+            "description": "Reconocimiento pro juego Ratland en mobile"
           }
         ]
       }
     ],
     "courses": [
+      {
+        "platform": "Pasantia Sistemas Cotel",
+        "description": "Practica de bases de datos y sistema multiusuario",
+        "gallery": ["assets/imgs/education/certificado_cotel.jpg"]
+      },
       {
         "platform": "Udemy",
         "description": "Cursos especializados en desarrollo web, backend y arquitectura de software",
